@@ -10,18 +10,31 @@ $timer = $("#timer");
 $highScore = $("#highScore");
 $startBtn = $("#start");
 
-$('ul').hide();
+
+$answerList.hide();
 $question.hide();
+
 $startBtn.on('click', function(){
     $startBtn.hide();
     $('ul').show();
     $question.show();
-})
-
-$answerBtn1.on("click", function() {
-    card1();
+    card0();
 });
 
+function card0() {
+    $answerBtns.off("click");
+    $question.html("0");
+    $answerBtn1.html("a1 card 0");
+    $answerBtn2.html("a2 card 0");
+    $answerBtn3.html("a3 card 0");
+    $answerBtn4.html("a4 card 0");
+    $answerBtn1.attr('class','.correct');
+    
+    $answerBtn1.on("click", function() {
+        card1();
+        $answerBtn1.removeClass(".correct").addClass('.wrong');
+    });
+};
 
 
 
@@ -35,9 +48,10 @@ function card1() {
     $answerBtn4.html("a4 card 1");
     $answerBtn1.attr('class','.correct');
     $answerBtn1.on("click", function(){
-                card2();
-        });
-    $answerBtn1.removeClass(".correct");
+        card2();
+        $answerBtn1.removeClass(".correct").addClass('.wrong');
+    });
+    
 };
     
     
@@ -53,8 +67,9 @@ function card2() {
     $answerBtn2.attr('class','.correct');
     $answerBtn2.on("click",function(){
         card3();
-    })
-    $answerBtn2.removeClass(".correct");
+        $answerBtn2.removeClass(".correct").addClass('.wrong');
+    });
+    
 };
 
 function card3() {
@@ -67,9 +82,10 @@ function card3() {
     $answerBtn3.attr('class','.correct');
     $answerBtn3.on("click",function(){
         card4();
-    })
-    ($answerBtn3).removeClass(".correct");
-};
+        ($answerBtn3).removeClass(".correct").addClass('.wrong');
+    });
+    
+    };
 function card4() {
     $answerBtns.off("click");
     $question.html("4");
@@ -81,11 +97,4 @@ function card4() {
     $answerBtn4.on("click",function(){
         card1();
     });
-    ($answerBtn4).removeClass(".correct");
-
 };
-
-
-
-    
-
