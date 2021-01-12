@@ -9,7 +9,7 @@ $answerBtn4 = $("#btn4");
 $timer = $("#timer");
 $highScore = $("#highScore");
 $startBtn = $("#start");
-$correct = $(".correct");
+var $correct; // = $(".correct");
 //use this selector to tabulate when someone clicks wrong
 $answerList.hide();
 $question.hide();
@@ -21,7 +21,6 @@ $startBtn.on('click', function(){
     card0();
 });
 
-//adding changes for new push
 function card0() {
     // $answerBtns.off("click");
     $question.html("0");
