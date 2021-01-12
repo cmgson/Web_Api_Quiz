@@ -30,7 +30,7 @@ function card0() {
     $answerBtn3.html("a3 card 0");
     $answerBtn4.html("a4 card 0");
     $answerBtn1.attr('class','correct');
-    $answerBtn1.on('click', function(){
+    $correct.on('click', function(){
         console.log("test");
         card1();
         
