@@ -9,8 +9,8 @@ $answerBtn4 = $("#btn4");
 $timer = $("#timer");
 $highScore = $("#highScore");
 $startBtn = $("#start");
-
-
+$correct = $(".correct");
+//use this selector to tabulate when someone clicks wrong
 $answerList.hide();
 $question.hide();
 
@@ -21,6 +21,7 @@ $startBtn.on('click', function(){
     card0();
 });
 
+
 function card0() {
     $answerBtns.off("click");
     $question.html("0");
@@ -28,12 +29,16 @@ function card0() {
     $answerBtn2.html("a2 card 0");
     $answerBtn3.html("a3 card 0");
     $answerBtn4.html("a4 card 0");
-    $answerBtn1.attr('class','.correct');
-    
-    $answerBtn1.on("click", function() {
+    $answerBtn1.attr('class','correct');
+    $correct.on('click', function(event){
+        console.log(event);
         card1();
-        $answerBtn1.removeClass(".correct").addClass('.wrong');
-    });
+        
+    })
+    // $answerBtn1.on("click", function() {
+    //     card1();
+    //     $answerBtn1.removeClass(".correct").addClass('.wrong');
+    // });
 };
 
 
