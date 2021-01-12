@@ -1,8 +1,8 @@
 .correct {
-    background-color: red;
+    color: red;
 
 }
 
 .wrong {
-    background-color: green;
+    color: green;
 }
