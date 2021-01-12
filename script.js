@@ -10,7 +10,8 @@ $timer = $("#timer");
 $highScore = $("#highScore");
 $startBtn = $("#start");
 var $correct;
-var $incorrect; //= $('.wrong');
+var $incorrect;
+var count = 60;
 $answerList.hide();
 $question.hide();
 
@@ -19,7 +20,19 @@ $startBtn.on('click', function(){
     $('ul').show();
     $question.show();
     card0();
+    timer = setInterval(function() {
+    $timer.html(count--);
+    if(count <= 1) clearInterval($timer);
+}, 1000);
 });
+
+
+ 
+
+
+function decrement() {
+    count -= 10;
+}
 
 function card0() {
     $question.html("0");
@@ -48,6 +61,7 @@ function card0() {
 
     $(".wrong").on("click", function () {
         console.log("decrement timer");
+        decrement();
     });
 };
 
@@ -79,6 +93,7 @@ function card1() {
 
     $(".wrong").on("click", function () {
         console.log("decrement timer");
+        decrement();
     });
 };
 
@@ -109,6 +124,7 @@ function card2() {
 
     $(".wrong").on("click", function () {
         console.log("decrement timer");
+        decrement();
     });
 };
 
@@ -139,6 +155,7 @@ function card3() {
 
     $(".wrong").on("click", function () {
         console.log("decrement timer");
+        decrement();
     });
 };
 
@@ -169,6 +186,7 @@ function card4() {
 
     $(".wrong").on("click", function () {
         console.log("decrement timer");
+        decrement();
     });
 }
 // function decrement () {
