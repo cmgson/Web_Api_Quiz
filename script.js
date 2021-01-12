@@ -21,186 +21,273 @@ $startBtn.on('click', function(){
     card0();
 });
 
+function card0() {
+    $question.html("0");
+    $answerBtn1.html("a1 card 0");
+    $answerBtn1.addClass("correct");
+
+    $answerBtn2.html("a2 card 0");
+    $answerBtn2.addClass("wrong");
+
+    $answerBtn3.html("a3 card 0");
+    $answerBtn3.addClass("wrong");
+
+    $answerBtn4.html("a4 card 0");
+    $answerBtn4.addClass("wrong");
+
+    $(".correct").on("click", function () {
+        $(".correct,.wrong").off();
+
+        $answerBtn1.removeClass("correct");
+        $answerBtn2.removeClass("wrong");
+        $answerBtn3.removeClass("wrong");
+        $answerBtn4.removeClass("wrong");
+
+        card1();
+    });
+
+    $(".wrong").on("click", function () {
+        console.log("decrement timer");
+    });
+};
+
+
+function card1() {
+    $question.html("1");
+    $answerBtn1.html("a1 card 1");
+    $answerBtn1.addClass("correct");
+
+    $answerBtn2.html("a2 card 2");
+    $answerBtn2.addClass("wrong");
+
+    $answerBtn3.html("a3 card 3");
+    $answerBtn3.addClass("wrong");
+
+    $answerBtn4.html("a4 card 4");
+    $answerBtn4.addClass("wrong");
+
+    $(".correct").on("click", function () {
+        $(".correct,.wrong").off();
+
+        $answerBtn1.removeClass("correct");
+        $answerBtn2.removeClass("wrong");
+        $answerBtn3.removeClass("wrong");
+        $answerBtn4.removeClass("wrong");
+
+        card2();
+    });
+
+    $(".wrong").on("click", function () {
+        console.log("decrement timer");
+    });
+};
+
+function card2() {
+    $question.html("2");
+    $answerBtn1.html("a1 card 2");
+    $answerBtn1.addClass("wrong");
+
+    $answerBtn2.html("a2 card 2");
+    $answerBtn2.addClass("correct");
+
+    $answerBtn3.html("a3 card 2");
+    $answerBtn3.addClass("wrong");
+
+    $answerBtn4.html("a4 card 2");
+    $answerBtn4.addClass("wrong");
+
+    $(".correct").on("click", function () {
+        $(".correct,.wrong").off();
+
+        $answerBtn1.removeClass("wrong");
+        $answerBtn2.removeClass("correct");
+        $answerBtn3.removeClass("wrong");
+        $answerBtn4.removeClass("wrong");
+
+        card3();
+    });
+
+    $(".wrong").on("click", function () {
+        console.log("decrement timer");
+    });
+};
+
+function card3() {
+    $question.html("3");
+    $answerBtn1.html("a1 card 3");
+    $answerBtn1.addClass("wrong");
+
+    $answerBtn2.html("a2 card 3");
+    $answerBtn2.addClass("wrong");
+
+    $answerBtn3.html("a3 card 3");
+    $answerBtn3.addClass("correct");
+
+    $answerBtn4.html("a4 card 3");
+    $answerBtn4.addClass("wrong");
+
+    $(".correct").on("click", function () {
+        $(".correct,.wrong").off();
+
+        $answerBtn1.removeClass("wrong");
+        $answerBtn2.removeClass("wrong");
+        $answerBtn3.removeClass("correct");
+        $answerBtn4.removeClass("wrong");
+
+        card4();
+    });
+
+    $(".wrong").on("click", function () {
+        console.log("decrement timer");
+    });
+};
+
+function card4() {
+    $question.html("4");
+    $answerBtn1.html("a1 card 4");
+    $answerBtn1.addClass("wrong");
+
+    $answerBtn2.html("a2 card 4");
+    $answerBtn2.addClass("wrong");
+
+    $answerBtn3.html("a3 card 4");
+    $answerBtn3.addClass("wrong");
+
+    $answerBtn4.html("a4 card 4");
+    $answerBtn4.addClass("correct");
+
+    $(".correct").on("click", function () {
+        $(".correct,.wrong").off();
+
+        $answerBtn1.removeClass("wrong");
+        $answerBtn2.removeClass("wrong");
+        $answerBtn3.removeClass("wrong");
+        $answerBtn4.removeClass("correct");
+
+        card5();
+    });
+
+    $(".wrong").on("click", function () {
+        console.log("decrement timer");
+    });
+}
 // function decrement () {
 //     $incorrect = $('.wrong');
     
 
-function card0() {
-    $answerBtns.off('click');
-    $question.html("0");
-    $answerBtn1.html("a1 card 0");
-    $answerBtn2.html("a2 card 0");
-    $answerBtn3.html("a3 card 0");
-    $answerBtn4.html("a4 card 0");
-    $answerBtn1.attr('class','correct');
-    $correct = $('.correct');
-    $incorrect = $('.wrong');
-    $correct.on('click', function(){
-        card1();
-        $answerBtn1.removeClass("correct").addClass('wrong');
-    });
-    $incorrect.on('click', function(){
-        //decrement timer
-        console.log("decrement timer");
-    });
+// function card0() {
+//     // $(".correct,.wrong").off();
+//     $question.html("0");
+//     $answerBtn1.html("a1 card 0");
+//     $answerBtn2.html("a2 card 0");
+//     $answerBtn3.html("a3 card 0");
+//     $answerBtn4.html("a4 card 0");
+//     $answerBtn1.removeClass('wrong').addClass('correct');
+//     $correct = $('.correct');
+//     $incorrect = $('.wrong');
+//     $correct.on('click', function(){
+//         card1();
+//         $answerBtn1.removeClass("correct").addClass('wrong');
+//     });
+//     $incorrect.on('click', function(){
+//         //decrement timer
+//         console.log("decrement timer");
+//     });
     
     
     
-};
-//decrement();
-
-function card1() {
-    $answerBtns.off("click");
-    $question.html("1");
-    $answerBtn1.html("a1 card 1");
-    $answerBtn2.html("a2 card 1");
-    $answerBtn3.html("a3 card 1");
-    $answerBtn4.html("a4 card 1");
-    $answerBtn1.attr('class','correct');
-    $correct = $('.correct');
-    $incorrect = $('.wrong');
-    $correct.on('click', function(){
-        card2();
-        $answerBtn1.removeClass("correct").addClass('wrong');
-        
-    });
-    
-    $incorrect.on('click', function(){
-        //decrement timer
-        console.log("decrement timer");
-    });
-    
-    
-    //decrement();
-};
-
-function card2() {
-    $answerBtns.off("click");
-    $question.html("2");
-    $answerBtn1.html("a1 card 2");
-    $answerBtn2.html("a2 card 2");
-    $answerBtn3.html("a3 card 2");
-    $answerBtn4.html("a4 card 2");
-    $answerBtn2.attr('class','correct');
-    $correct = $('.correct');
-   $correct.on('click', function(){
-        card3();
-        $answerBtn2.removeClass("correct").addClass('wrong');
-    });
-    $incorrect.on('click', function(){
-        //decrement timer
-        console.log("decrement timer");
-    });
-    
-    
-     //decrement();
-};
-
-function card3() {
-    // $answerBtns.off("click");
-    $question.html("3");
-    $answerBtn1.html("a1 card 3");
-    $answerBtn2.html("a2 card 3");
-    $answerBtn3.html("a3 card 3");
-    $answerBtn4.html("a4 card 3");
-    $answerBtn3.attr('class','correct');
-    $correct = $('.correct');
-    $correct.on('click', function(){
-        card4();
-        $answerBtn3.removeClass("correct").addClass('wrong');
-    });
-    $incorrect.on('click', function(){
-        //decrement timer
-        console.log("decrement timer");
-    });
-    
-    
-    //decrement();
-};
-
-function card4() {
-    // $answerBtns.off("click");
-    $question.html("4");
-    $answerBtn1.html("a1 card 4");
-    $answerBtn2.html("a2 card 4");
-    $answerBtn3.html("a3 card 4");
-    $answerBtn4.html("a4 card 4");
-    $answerBtn4.attr('class','correct');
-    $correct = $('.correct');
-    $correct.on('click', function(){
-        $answerBtn4.removeClass("correct").addClass('wrong');
-        card0();
-    });
-    $incorrect.on('click', function(){
-        //decrement timer
-        console.log("decrement timer");
-    });
-    
-    
-     //decrement();
-};
-
+// };
+// //decrement();
 
 // function card1() {
-//     $answerBtns.off("click");
+//     $("correct,wrong").off();
 //     $question.html("1");
 //     $answerBtn1.html("a1 card 1");
 //     $answerBtn2.html("a2 card 1");
 //     $answerBtn3.html("a3 card 1");
 //     $answerBtn4.html("a4 card 1");
-//     $answerBtn1.attr('class','.correct');
-//     decrement ();
-//     $correct.on("click", function(){
+//     $answerBtn1.removeClass('wrong').addClass('correct');
+//     $correct = $('.correct');
+//     $incorrect = $('.wrong');
+//     $correct.on('click', function(){
 //         card2();
-//         $answerBtn1.removeClass(".correct").addClass('.wrong');
+//         $answerBtn1.removeClass("correct").addClass('wrong');
+        
 //     });
     
+//     $incorrect.on('click', function(){
+//         //decrement timer
+//         console.log("decrement timer");
+//     });
+    
+    
+//     //decrement();
 // };
-    
-    
-
 
 // function card2() {
-//     $answerBtns.off("click");
+//     $("correct,wrong").off();
 //     $question.html("2");
 //     $answerBtn1.html("a1 card 2");
 //     $answerBtn2.html("a2 card 2");
 //     $answerBtn3.html("a3 card 2");
-//     $answerBtn4.html("a4 card 2"); 
-//     $answerBtn2.attr('class','.correct');
-//     decrement();
-//     $correct.on("click",function(){
+//     $answerBtn4.html("a4 card 2");
+//     $answerBtn2.removeClass('wrong').addClass('correct');
+//     $correct = $('.correct');
+//    $correct.on('click', function(){
 //         card3();
-//         $answerBtn2.removeClass(".correct").addClass('.wrong');
+//         $answerBtn2.removeClass("correct").addClass('wrong');
+//     });
+//     $incorrect.on('click', function(){
+//         //decrement timer
+//         console.log("decrement timer");
 //     });
     
+    
+//      //decrement();
 // };
 
 // function card3() {
-//     $answerBtns.off("click");
+//     $("correct,wrong").off();
 //     $question.html("3");
 //     $answerBtn1.html("a1 card 3");
 //     $answerBtn2.html("a2 card 3");
 //     $answerBtn3.html("a3 card 3");
-//     $answerBtn4.html("a4 card 3"); 
-//     $answerBtn3.attr('class','.correct');
-//     decrement();
-//     $correct.on("click",function(){
+//     $answerBtn4.html("a4 card 3");
+//     $answerBtn3.removeClass('wrong').addClass('correct');
+//     $correct = $('.correct');
+//     $correct.on('click', function(){
 //         card4();
-//         ($answerBtn3).removeClass(".correct").addClass('.wrong');
+//         $answerBtn3.removeClass("correct").addClass('wrong');
+//     });
+//     $incorrect.on('click', function(){
+//         //decrement timer
+//         console.log("decrement timer");
 //     });
     
-//     };
-// function card4() {
-//     $answerBtns.off("click");
-//     $question.html("4");
-//     ($answerBtn1).html("a1 card 4");
-//     ($answerBtn2).html("a2 card 4");
-//     ($answerBtn3).html("a3 card 4");
-//     ($answerBtn4).html("a4 card 4");
-//     ($answerBtn4).attr('class','.correct');
-//     decrement();
-//     $correct.on("click",function(){
-//         card1();
-//     });
+    
+//     //decrement();
 // };
+
+// function card4() {
+//     $("correct,wrong").off();
+//     $question.html("4");
+//     $answerBtn1.html("a1 card 4");
+//     $answerBtn2.html("a2 card 4");
+//     $answerBtn3.html("a3 card 4");
+//     $answerBtn4.html("a4 card 4");
+//     $answerBtn4.removeClass('wrong').addClass('correct');
+//     $correct = $('.correct');
+//     $correct.on('click', function(){
+//         $answerBtn4.removeClass("correct").addClass('wrong');
+//         card0();
+//     });
+//     $incorrect.on('click', function(){
+//         //decrement timer
+//         console.log("decrement timer");
+//     });
+    
+    
+//      //decrement();
+// };
+
+
