@@ -21,7 +21,7 @@ $startBtn.on('click', function(){
     card0();
 });
 
-
+//adding changes for new push
 function card0() {
     // $answerBtns.off("click");
     $question.html("0");
