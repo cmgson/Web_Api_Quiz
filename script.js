@@ -23,18 +23,18 @@ $startBtn.on('click', function(){
 
 
 function card0() {
-    $answerBtns.off("click");
+    // $answerBtns.off("click");
     $question.html("0");
     $answerBtn1.html("a1 card 0");
     $answerBtn2.html("a2 card 0");
     $answerBtn3.html("a3 card 0");
     $answerBtn4.html("a4 card 0");
     $answerBtn1.attr('class','correct');
-    $correct.on('click', function(event){
-        console.log(event);
+    $answerBtn1.on('click', function(){
+        console.log("test");
         card1();
         
-    })
+    });
     // $answerBtn1.on("click", function() {
     //     card1();
     //     $answerBtn1.removeClass(".correct").addClass('.wrong');
