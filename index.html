@@ -11,7 +11,10 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    <style src="style.css"></style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
     <!-- jquery cdn -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -24,36 +27,22 @@
       <div class="row">
         <div
           class="col-sm-6"
-          id="highScore"
-          style="background-color: green; float: left"
-        >
+          id="highScore">
           highScore
         </div>
         <div
           class="col-sm-6"
           id="timer"
-          style="background-color: blue float; text-align: right"
         >
           timer
         </div>
       </div>
 
-      <div
-        class="container"
-        id="cards"
-        style="
-          border: solid;
-          margin: auto;
-          padding: 150px;
-          background-color: red;
-          height: 500px;
-          width: 100%;
-        "
-      >
+      <div id="cards" >
         <div class="row">
           <div class="col-lg-4"></div>
           <div class="col-lg-4">
-            <h1 id="question" style="text-align: left; border: solid">
+            <h1 id="question">
               Questions go here
             </h1>
           </div>
@@ -62,22 +51,21 @@
         <div class="row">
           <div class="col-lg-4"></div>
           <div class="col-lg-4">
-            <span style="align-content: center; padding: 100px"
-              ><button id="start">Start Quiz!</button></span
-            >
+            <span class="d-grid gap-2"><button type="button" class="btn btn-primary btn-lg" id="start">Start Quiz!</button></span>
             <span id="gameOver"></span>
-            <ul id="answerList" style="list-style: none; text-align: center">
+            <span id="highScore"></span>
+            <ul id="answerList">
               <li id="a1">
-                <button id="btn1">Here is answer 1</button>
+                <button type="button" class="btn btn-primary btn-lg" id="btn1"></button>
               </li>
               <li id="a2">
-                <button id="btn2">Here is answer 2</button>
+                <button type="button" class="btn btn-primary btn-lg" id="btn2"></button>
               </li>
               <li id="a3">
-                <button id="btn3">Here is answer 3</button>
+                <button type="button"class="btn btn-primary btn-lg" id="btn3"></button>
               </li>
               <li id="a4">
-                <button id="btn4">Here is answer 4</button>
+                <button type="button" class="btn btn-primary btn-lg" id="btn4"></button>
               </li>
             </ul>
           </div>

@@ -1,0 +1,84 @@
+body {
+    font-family: 'Bangers', cursive; ;
+    background-image: url(background4game.jpg);
+}
+
+#cards {
+    border: solid;
+    margin: auto;
+    padding: 150px;
+    height: 800px;
+    width: 100%;
+}
+
+#timer {
+    /* background-color: blue; */
+    text-align: right;
+    padding-right: 40px;
+    font-size: xx-large;
+    color: gold;
+    font-size: xx-large;
+}
+#highScore {
+    /* background-color: green; */
+    float: left;
+    padding-left: 30px;
+    font-size: xx-large;
+    color: gold;
+    border: solid, 10px;
+}
+
+#question {
+    text-align: left;
+    border: solid;
+    border-color: gold;
+    background-color: gold;
+    content: center;
+}
+
+#answerList {
+    list-style: none;
+    text-align: center;
+}
+
+#span {
+    align-content: center;
+    padding: 100px;
+    font-weight: bolder;
+    color:red;
+    font-size: x-large;
+}
+
+#start {
+    background-color:gold;
+    height: 100px;
+    border: solid;
+    color:black;
+    font-size: xx-large;
+    font-weight: 800;
+}
+
+.btn-primary {
+    margin: 3px;
+    padding: 3px;
+    background-color: gold;
+    color: black;
+    border-color: black;
+}
+
+h1 {
+    padding: 20px;
+    background-color:gold;
+    height: 100px;
+    border: solid;
+    color:black;
+    font-size: xx-large;
+    font-weight: 800;
+    text-align: center;
+    /* font: outline;
+    font-size: 80px;
+    background-color: rgba(0, 0, 0, 0.349);
+    text-align: center;
+    color: gold; */
+}
+
