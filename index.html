@@ -53,7 +53,25 @@
           <div class="col-lg-4">
             <span class="d-grid gap-2"><button type="button" class="btn btn-primary btn-lg" id="start">Start Quiz!</button></span>
             <span id="gameOver"></span>
-            <span id="highScore"></span>
+            
+            <div class="clearfix" id="highScoreCard" style="margin-top: 10px;">
+                <div class="card" style="background-color: gold;">
+                  <h2 style="margin: auto;">Initials for High Score!</h2>
+                  <form method="POST">
+                    <div class="input-group">
+                      <label for="initials"></label>
+                      <input type="text" name="initials" id="initials" placeholder="add initials here" style="margin-left: 50px;"/><span id="scoreDisplay" style="padding-left: 40px;">score<h3>90</h3></span>
+                    </div>
+                    <div id="msg"></div>
+                    <button id="submit" style=" margin-left: 110px; margin-top: 5px;">Submit</button>
+                  </form>
+                </div>
+                <div class="card" style="margin-top: 20px; background-color: gold;">
+                  <h2 style="margin: auto;">Top 3</h2>
+                  <p><span id="lastEntries"></span></p>
+                </div>
+            </div>
+            
             <ul id="answerList">
               <li id="a1">
                 <button type="button" class="btn btn-primary btn-lg" id="btn1"></button>
