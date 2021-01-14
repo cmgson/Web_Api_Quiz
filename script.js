@@ -13,10 +13,10 @@ $gameOver = $("#gameOver");
 
 // these are for the highscore list
 $initials = $("#initials");
-$highScore = $("#highScoreCard");
+$highScoreCard = $("#highScoreCard");
 $submitBtn = $("#submit");
 $lastEntries = $("#lastEntries");
-$scoreDisplaySpan = $('#scoreDisplay');
+$scoreDisplaySpan = $("#scoreDisplay");
 
 // these are for the timer
 var $correct;
@@ -26,7 +26,7 @@ var count = 60;
 // sets up page for start button
 $answerList.hide();
 $question.hide();
-$highScore.hide();
+$highScoreCard.hide();
 
 renderLastRegistered();
 
@@ -52,8 +52,8 @@ function endGame() {
     $question.hide();
     $gameOver.show();
     $gameOver.html("<h1>GAME OVER!!!</h1>");
-    $scoreDisplaySpan.text('score');
-    $highScore.show();
+    $highScoreCard.show();
+    $scoreDisplaySpan.html("here is where the score will go");
   }
 }
 
@@ -71,7 +71,7 @@ $startBtn.on("click", function () {
       $question.hide();
       $gameOver.show();
       $gameOver.html("<h1>GAME OVER!!!</h1>");
-      $highScore.show();
+      $highScoreCard.show();
     }
   }, 1000);
 });
@@ -87,12 +87,13 @@ function timerStuff() {
     decrement();
   } else {
     clearInterval(timer);
-    // count = 0;
+    count = 0;
     $timer.html(count);
     $("ul").hide();
     $question.hide();
     $gameOver.html("<h1>GAME OVER!!!</h1>");
-    $highScore.show();
+    $highScoreCard.show();
+    $scoreDisplaySpan.html("<p>score : " + count + "</p>");
   }
 }
 
@@ -112,11 +113,8 @@ function card0() {
 
   $(".correct").on("click", function () {
     $(".correct,.wrong").off();
-
-    $answerBtn1.removeClass("correct");
-    $answerBtn2.removeClass("wrong");
-    $answerBtn3.removeClass("wrong");
-    $answerBtn4.removeClass("wrong");
+    $answerBtns.removeClass("correct, wrong");
+ 
     card1();
   });
 
@@ -141,11 +139,7 @@ function card1() {
 
   $(".correct").on("click", function () {
     $(".correct,.wrong").off();
-
-    $answerBtn1.removeClass("correct");
-    $answerBtn2.removeClass("wrong");
-    $answerBtn3.removeClass("wrong");
-    $answerBtn4.removeClass("wrong");
+    $answerBtns.removeClass("correct, wrong");
 
     card2();
   });
@@ -171,11 +165,7 @@ function card2() {
 
   $(".correct").on("click", function () {
     $(".correct,.wrong").off();
-
-    $answerBtn1.removeClass("wrong");
-    $answerBtn2.removeClass("correct");
-    $answerBtn3.removeClass("wrong");
-    $answerBtn4.removeClass("wrong");
+    $answerBtns.removeClass("correct, wrong");
     card3();
   });
 
@@ -200,11 +190,7 @@ function card3() {
 
   $(".correct").on("click", function () {
     $(".correct,.wrong").off();
-
-    $answerBtn1.removeClass("wrong");
-    $answerBtn2.removeClass("wrong");
-    $answerBtn3.removeClass("correct");
-    $answerBtn4.removeClass("wrong");
+    $answerBtns.removeClass("correct, wrong");
     card4();
   });
 
@@ -229,17 +215,17 @@ function card4() {
 
   $(".correct").on("click", function () {
     $(".correct,.wrong").off();
-
-
-    $answerBtn1.removeClass("wrong");
-    $answerBtn2.removeClass("wrong");
-    $answerBtn3.removeClass("wrong");
-    $answerBtn4.removeClass("correct");
-
-    card5();
+    $answerBtns.removeClass("correct, wrong");
+    $("ul").hide();
+    $question.hide();
+    $gameOver.show();
+    $gameOver.html("<h1>GAME OVER!!!</h1>");
+    $highScore.show();
+    clearInterval(timer);
   });
 
   $(".wrong").on("click", function () {
     timerStuff();
   });
-}
+  $highScore.text(count);
+};
