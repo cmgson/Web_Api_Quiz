@@ -2,6 +2,24 @@ body {
     font-family: 'Bangers', cursive; ;
     background-image: url(background4game.jpg);
 }
+h2 {
+    margin: auto;
+}
+#scoreDisplay {
+    padding-left: 40px;
+}
+#initials {
+    margin-left: 50px;
+}
+
+.card {
+    margin-top: 20px;
+    background-color: gold;
+}
+#submit {
+    margin-left: 110px;
+    margin-top: 5px;
+}
 
 #cards {
     border: solid;
