@@ -38,14 +38,16 @@ The following animation demonstrates the application functionality:
 ![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
 
 #### Here is what the Start screen looks like!
-![Start of quiz](Screen Shot 2021-01-14 at 11.04.27 PM.png)
+
+![Start of quiz](start.png)
 
 #### And the Question Panel
-![question panel](Screen Shot 2021-01-14 at 11.06.18 PM.png)
+
+![question panel](question.png)
 
 #### Finally, the Game Over Panel
 
-![Game over](Screen Shot 2021-01-14 at 11.07.57 PM.png)
+![Game over](gameover.png)
 
 ### Issues
 - Used a lot of coding techniques I am not familiar with such as jquery.
@@ -59,3 +61,9 @@ The following animation demonstrates the application functionality:
 - reintroduced the use of style sheets as I have been out of practice
 - keeping organized when utilizing multiple libraries
 - taking advantage of the support on the bootcampspot homepage
+
+### Here is a link to both my deployed quiz and my Repo!
+
+https://cmgson.github.io/Web_Api_Quiz/
+
+https://github.com/cmgson/Web_Api_Quiz
