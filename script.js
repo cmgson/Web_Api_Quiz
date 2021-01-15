@@ -28,9 +28,9 @@ $answerList.hide();
 $question.hide();
 $highScoreCard.hide();
 
-renderLastRegistered();
+renderEnder();
 
-function renderLastRegistered() {
+function renderEnder() {
   var initials = localStorage.getItem("initials");
 
   $lastEntries.text(initials + ": " + count);
@@ -41,7 +41,7 @@ $submitBtn.on("click", function (event) {
 
   var initialEntry = document.querySelector("#initials").value;
   localStorage.setItem("initials", initialEntry);
-  renderLastRegistered();
+  renderEnder();
 });
 
 //logic for end of game
@@ -59,7 +59,7 @@ function endGame() {
 
 //start button initialized show game
 $startBtn.on("click", function () {
-  card0();
+  cardD();
   $startBtn.hide();
   $("ul").show();
   $question.show();
@@ -87,8 +87,8 @@ function timerStuff() {
     decrement();
   } else {
     clearInterval(timer);
-    count = 0;
     $timer.html(count);
+    count = 0;
     $("ul").hide();
     $question.hide();
     $gameOver.html("<h1>GAME OVER!!!</h1>");
@@ -97,24 +97,139 @@ function timerStuff() {
   }
 }
 
-function card0() {
-  $question.html("0");
-  $answerBtn1.html("a1 card 0");
-  $answerBtn1.addClass("correct");
+function cardD() {
+  $question.html(
+    "The moral compass in the first movie, Hans, takes hiatus in the 2nd movie, for his brother by what name?"
+  );
+  $answerBtn1.html("Sal");
+  $answerBtn1.addClass("wrong");
 
-  $answerBtn2.html("a2 card 0");
+  $answerBtn2.html("Hansel");
   $answerBtn2.addClass("wrong");
 
-  $answerBtn3.html("a3 card 0");
+  $answerBtn3.html("Lars");
   $answerBtn3.addClass("wrong");
 
-  $answerBtn4.html("a4 card 0");
+  $answerBtn4.html("Jan");
+  $answerBtn4.addClass("correct");
+
+  $(".correct").on("click", function () {
+    $(".correct,.wrong").off();
+    $answerBtns.removeClass("correct");
+    $answerBtns.removeClass("wrong");
+
+    cardC();
+  });
+
+  $(".wrong").on("click", function () {
+    timerStuff();
+  });
+}
+
+function cardC() {
+  $question.html("Which team did Banks play for before joining the Ducks?");
+  $answerBtn1.html("The Cobras");
+  $answerBtn1.addClass("wrong");
+
+  $answerBtn2.html("The Raiders");
+  $answerBtn2.addClass("wrong");
+
+  $answerBtn3.html("District 15");
+  $answerBtn3.addClass("wrong");
+
+  $answerBtn4.html("The Hawks");
+  $answerBtn4.addClass("correct");
+
+  $(".correct").on("click", function () {
+    $(".correct,.wrong").off();
+    $answerBtns.removeClass("correct");
+    $answerBtns.removeClass("wrong");
+
+    cardB();
+  });
+
+  $(".wrong").on("click", function () {
+    timerStuff();
+  });
+}
+
+function cardB() {
+  $question.html(
+    "What is the name of the hockey team before they adopt 'The Ducks'?"
+  );
+  $answerBtn1.html("The bruisers");
+  $answerBtn1.addClass("wrong");
+
+  $answerBtn2.html("The NorthStars");
+  $answerBtn2.addClass("wrong");
+
+  $answerBtn3.html("District 5");
+  $answerBtn3.addClass("correct");
+
+  $answerBtn4.html("Edina Northern Lights");
   $answerBtn4.addClass("wrong");
 
   $(".correct").on("click", function () {
     $(".correct,.wrong").off();
-    $answerBtns.removeClass("correct, wrong");
- 
+    $answerBtns.removeClass("correct");
+    $answerBtns.removeClass("wrong");
+
+    cardA();
+  });
+
+  $(".wrong").on("click", function () {
+    timerStuff();
+  });
+}
+
+function cardA() {
+  $question.html("What was Gordon Bombays profession?");
+  $answerBtn1.html("Ex-NHL star");
+  $answerBtn1.addClass("wrong");
+
+  $answerBtn2.html("Career Criminal");
+  $answerBtn2.addClass("wrong");
+
+  $answerBtn3.html("Truck Driver");
+  $answerBtn3.addClass("wrong");
+
+  $answerBtn4.html("Lawyer");
+  $answerBtn4.addClass("correct");
+
+  $(".correct").on("click", function () {
+    $(".correct,.wrong").off();
+    $answerBtns.removeClass("correct");
+    $answerBtns.removeClass("wrong");
+
+    card0();
+  });
+
+  $(".wrong").on("click", function () {
+    timerStuff();
+  });
+}
+
+function card0() {
+  $question.html(
+    "The dorm in mighty ducks 3 is shared by what other movie/show?"
+  );
+  $answerBtn1.html("Dead Poets Society");
+  $answerBtn1.addClass("correct");
+
+  $answerBtn2.html("Saved by the Bell: The College Years");
+  $answerBtn2.addClass("wrong");
+
+  $answerBtn3.html("High School Musical");
+  $answerBtn3.addClass("wrong");
+
+  $answerBtn4.html("Pitch Perfect");
+  $answerBtn4.addClass("wrong");
+
+  $(".correct").on("click", function () {
+    $(".correct,.wrong").off();
+    $answerBtns.removeClass("correct");
+    $answerBtns.removeClass("wrong");
+
     card1();
   });
 
@@ -124,22 +239,23 @@ function card0() {
 }
 
 function card1() {
-  $question.html("1");
-  $answerBtn1.html("a1 card 1");
+  $question.html("What famous actor auditioned for the role of Charlie Conway");
+  $answerBtn1.html("Jake Gyllenhaal");
   $answerBtn1.addClass("correct");
 
-  $answerBtn2.html("a2 card 1");
+  $answerBtn2.html("Joseph Gordon Levitt");
   $answerBtn2.addClass("wrong");
 
-  $answerBtn3.html("a3 card 1");
+  $answerBtn3.html("Macaulay Culkin");
   $answerBtn3.addClass("wrong");
 
-  $answerBtn4.html("a4 card 1");
+  $answerBtn4.html("Jonathan Taylor Thomas");
   $answerBtn4.addClass("wrong");
 
   $(".correct").on("click", function () {
     $(".correct,.wrong").off();
-    $answerBtns.removeClass("correct, wrong");
+    $answerBtns.removeClass("correct");
+    $answerBtns.removeClass("wrong");
 
     card2();
   });
@@ -150,22 +266,25 @@ function card1() {
 }
 
 function card2() {
-  $question.html("2");
-  $answerBtn1.html("a1 card 2");
+  $question.html(
+    "Banks is referred to as a cake eater, what city would a person be from in order to be a cake eater?"
+  );
+  $answerBtn1.html("Farmington");
   $answerBtn1.addClass("wrong");
 
-  $answerBtn2.html("a2 card 2");
+  $answerBtn2.html("Edina");
   $answerBtn2.addClass("correct");
 
-  $answerBtn3.html("a3 card 2");
+  $answerBtn3.html("Apple Valley");
   $answerBtn3.addClass("wrong");
 
-  $answerBtn4.html("a4 card 2");
+  $answerBtn4.html("Cottage Grove");
   $answerBtn4.addClass("wrong");
 
   $(".correct").on("click", function () {
     $(".correct,.wrong").off();
-    $answerBtns.removeClass("correct, wrong");
+    $answerBtns.removeClass("correct");
+    $answerBtns.removeClass("wrong");
     card3();
   });
 
@@ -175,22 +294,25 @@ function card2() {
 }
 
 function card3() {
-  $question.html("3");
-  $answerBtn1.html("a1 card 3");
+  $question.html(
+    "The name Gordon Bombay is a referrence to what beverage originally?"
+  );
+  $answerBtn1.html("Brands of Apple Juice");
   $answerBtn1.addClass("wrong");
 
-  $answerBtn2.html("a2 card 3");
+  $answerBtn2.html("Mai-Tai");
   $answerBtn2.addClass("wrong");
 
-  $answerBtn3.html("a3 card 3");
+  $answerBtn3.html("Gin");
   $answerBtn3.addClass("correct");
 
-  $answerBtn4.html("a4 card 3");
+  $answerBtn4.html("Scotch");
   $answerBtn4.addClass("wrong");
 
   $(".correct").on("click", function () {
     $(".correct,.wrong").off();
-    $answerBtns.removeClass("correct, wrong");
+    $answerBtns.removeClass("correct,");
+    $answerBtns.removeClass("wrong");
     card4();
   });
 
@@ -200,32 +322,38 @@ function card3() {
 }
 
 function card4() {
-  $question.html("4");
-  $answerBtn1.html("a1 card 4");
+  $question.html(
+    "What famous Song is used in the end credits of the first film?"
+  );
+  $answerBtn1.html("Back that thang up");
   $answerBtn1.addClass("wrong");
 
-  $answerBtn2.html("a2 card 4");
+  $answerBtn2.html("Danger Zone");
   $answerBtn2.addClass("wrong");
 
-  $answerBtn3.html("a3 card 4");
+  $answerBtn3.html("Get Ready for This");
   $answerBtn3.addClass("wrong");
 
-  $answerBtn4.html("a4 card 4");
+  $answerBtn4.html("We are the Champions");
   $answerBtn4.addClass("correct");
 
   $(".correct").on("click", function () {
     $(".correct,.wrong").off();
-    $answerBtns.removeClass("correct, wrong");
+    $answerBtns.removeClass("correct,");
+    $answerBtns.removeClass("wrong");
     $("ul").hide();
     $question.hide();
     $gameOver.show();
     $gameOver.html("<h1>GAME OVER!!!</h1>");
     $highScore.show();
+    $highScoreCard.show();
+    $scoreDisplaySpan.html("<p>score : " + count + "</p>");
     clearInterval(timer);
+    $highScore.text(count);
   });
 
   $(".wrong").on("click", function () {
     timerStuff();
   });
   $highScore.text(count);
-};
+}
