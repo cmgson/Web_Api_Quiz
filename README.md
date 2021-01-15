@@ -38,16 +38,14 @@ The following animation demonstrates the application functionality:
 ![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
 
 #### Here is what the Start screen looks like!
-![Start of quiz]
-(Screen Shot 2021-01-14 at 11.04.27 PM.png)
+![Start of quiz](Screen Shot 2021-01-14 at 11.04.27 PM.png)
 
 #### And the Question Panel
-![question panel]
-(Screen Shot 2021-01-14 at 11.06.18 PM.png)
+![question panel](Screen Shot 2021-01-14 at 11.06.18 PM.png)
 
 #### Finally, the Game Over Panel
-![Game over]
-Screen Shot 2021-01-14 at 11.07.57 PM.png)
+
+![Game over](Screen Shot 2021-01-14 at 11.07.57 PM.png)
 
 ### Issues
 - Used a lot of coding techniques I am not familiar with such as jquery.
